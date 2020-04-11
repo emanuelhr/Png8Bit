@@ -6,24 +6,22 @@
         xmlns:local="clr-namespace:Png8Bit"
         ResizeMode="NoResize"
         mc:Ignorable="d"
-        Title="Png8Bit" Height="199" Width="460">
-    <Grid Margin="0,0,0,1">
+        Title="Png8Bit" Height="296" Width="701">
+    <Grid Margin="0,0,0,-6">
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="393*"/>
-            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="0*" />
         </Grid.ColumnDefinitions>
-        <Label x:Name="label" Content="Formats to convert:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <CheckBox x:Name="jpg" Content="jpg" HorizontalAlignment="Left" Margin="113,6,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="png" Content="png" HorizontalAlignment="Left" Margin="155,6,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="tif" Content="tif" HorizontalAlignment="Left" Margin="201,6,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btn_convert" Content="Convert" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" Width="222" Click="btn_convert_Click"/>
-        <ListView x:Name="list_drop" Margin="10,26,0,0" HorizontalAlignment="Left" Width="222" Height="91" VerticalAlignment="Top">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <TextBox x:Name="tbox_output" Margin="249,10,10,10" Text="" TextWrapping="Wrap" IsReadOnly="True" Grid.ColumnSpan="2" />
+        <Label x:Name="label" Content="Formats to convert:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="113" />
+        <CheckBox x:Name="chk_jpg" Content="jpg" IsChecked="True" HorizontalAlignment="Left" Margin="113,6,0,0" VerticalAlignment="Top" Height="15" Width="37" />
+        <CheckBox x:Name="chk_png" Content="png" HorizontalAlignment="Left" Margin="155,6,0,0" VerticalAlignment="Top" Height="15" Width="41" />
+        <CheckBox x:Name="chk_tif" Content="tif" HorizontalAlignment="Left" Margin="201,6,0,0" VerticalAlignment="Top" Height="15" Width="31" />
+        <Button x:Name="btn_convert" Content="Convert" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Width="222" Click="btn_convert_Click" Height="20" />
+
+        <TextBox x:Name="tbox_output" Margin="249,26,10,10" Text="" TextWrapping="Wrap" IsReadOnly="True" />
+        <Label x:Name="label1" Content="Output" HorizontalAlignment="Left" Margin="444,3,0,0" VerticalAlignment="Top" Width="52" Height="26"/>
+        <ListBox x:Name="list_drop" Margin="10,31,469,69"/>
+
     </Grid>
 </Window>

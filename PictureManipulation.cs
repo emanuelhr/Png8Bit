@@ -1,97 +1,40 @@
 ﻿using nQuant;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Png8Bit
 {
     public static class PictureManipulation
     {
-       public enum Filters
+        public static bool ConvertPicture(string path)
         {
-            png,
-            jpg,
-            tif
-
-        }
-
-
-        //public static string FilterPaths(string path, Filters filter)
-        //{ 
-        //    return 
-
-        //}
-
-        public static void ConvertPicture(string path, bool isFolder=true)
-        {
-            string[] allFiles = Directory.GetFiles(path+"\\", "*.*", SearchOption.AllDirectories);
-
-            foreach (var file in allFiles)
+            FileInfo fileInfo = new FileInfo(path);
+            var newPath = new StringBuilder(path);
+            newPath.Remove(newPath.Length - 3, 3);
+            newPath.Append("png");
+            var originalImage = new Bitmap(path);
+            if (originalImage.Size != new Size(400, 400) & originalImage.PixelFormat != PixelFormat.Format32bppArgb)
             {
-                FileInfo fileInfo = new FileInfo(file);
-                var newPath = new StringBuilder(file);
-                newPath.Remove(newPath.Length - 3, 3);
-                newPath.Append("png");
-                var originalImage = new Bitmap(file);
-                if (originalImage.Size != new Size(400, 400) & originalImage.PixelFormat != PixelFormat.Format32bppArgb)
+                Bitmap newImage = OriginalImageScale(originalImage, 400, 400);
+                if (newPath.ToString() == path)
                 {
-                    Bitmap newImage = OriginalImageScale(originalImage, 400, 400);
-                    if (newPath.ToString() == file)
+                    for (int tries = 0; IsFileLocked(fileInfo) && tries < 5; tries++)
                     {
-                        for (int tries = 0; IsFileLocked(fileInfo) && tries < 5; tries++)
-                        {
-                            Thread.Sleep(1000);
-                            Console.WriteLine("Waiting");
-                        }
-
-                        File.Delete(newPath.ToString());
+                        Thread.Sleep(1000);
                     }
-
-                    To8BitPng(newPath.ToString(), newImage);
-                    Console.WriteLine("Converted picture");
+                    File.Delete(newPath.ToString());
                 }
 
+                To8BitPng(newPath.ToString(), newImage);
+                return true;
             }
+            return false;
         }
-        public static void ConvertPicture(string path)
-        {
-            string[] allFiles = Directory.GetFiles(@"D:\Programiranje_slike\", "*.*", SearchOption.AllDirectories);
-
-            foreach (var file in allFiles)
-            {
-                FileInfo fileInfo = new FileInfo(file);
-                var newPath = new StringBuilder(file);
-                newPath.Remove(newPath.Length - 3, 3);
-                newPath.Append("png");
-                var originalImage = new Bitmap(file);
-                if (originalImage.Size != new Size(400, 400) & originalImage.PixelFormat != PixelFormat.Format32bppArgb)
-                {
-                    Bitmap newImage = OriginalImageScale(originalImage, 400, 400);
-                    if (newPath.ToString() == file)
-                    {
-                        for (int tries = 0; IsFileLocked(fileInfo) && tries < 5; tries++)
-                        {
-                            Thread.Sleep(1000);
-                            Console.WriteLine("Waiting");
-                        }
-
-                        File.Delete(newPath.ToString());
-                    }
-
-                    To8BitPng(newPath.ToString(), newImage);
-                    Console.WriteLine("Converted picture");
-                }
-
-            }
-        }
-
 
         public static void To8BitPng(string path, Bitmap image)
         {
@@ -119,9 +62,7 @@ namespace Png8Bit
                 graph.DrawImage(image, ((int)width - scaleWidth) / 2, ((int)height - scaleHeight) / 2, scaleWidth, scaleHeight);
             }
             return bmp;
-
         }
-
 
         public static bool IsFileLocked(FileInfo file)
         {
@@ -148,8 +89,5 @@ namespace Png8Bit
             //file is not locked
             return false;
         }
-
-
-
     }
 }
