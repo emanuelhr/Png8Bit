@@ -1,0 +1,29 @@
+﻿<Window x:Class="Png8Bit.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Png8Bit"
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Title="Png8Bit" Height="199" Width="460">
+    <Grid Margin="0,0,0,1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="393*"/>
+            <ColumnDefinition Width="67*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label" Content="Formats to convert:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <CheckBox x:Name="jpg" Content="jpg" HorizontalAlignment="Left" Margin="113,6,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="png" Content="png" HorizontalAlignment="Left" Margin="155,6,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="tif" Content="tif" HorizontalAlignment="Left" Margin="201,6,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_convert" Content="Convert" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" Width="222" Click="btn_convert_Click"/>
+        <ListView x:Name="list_drop" Margin="10,26,0,0" HorizontalAlignment="Left" Width="222" Height="91" VerticalAlignment="Top">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="tbox_output" Margin="249,10,10,10" Text="" TextWrapping="Wrap" IsReadOnly="True" Grid.ColumnSpan="2" />
+    </Grid>
+</Window>

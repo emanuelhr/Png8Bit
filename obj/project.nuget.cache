@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "NVrpSshKw9hMfnVzBMSG06hmFRjciboVCS9nCPITmNIrusOpJbvmNHdJ+FjDY4aMyt1BVOyZNjNVAJcUXxPdsw==",
+  "success": true,
+  "projectFilePath": "D:\\Projekti C sharp\\Png8Bit\\Png8Bit\\Png8Bit.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jeff\\.nuget\\packages\\gong-wpf-dragdrop\\2.2.0\\gong-wpf-dragdrop.2.2.0.nupkg.sha512",
+    "C:\\Users\\Jeff\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Jeff\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Jeff\\.nuget\\packages\\nquant\\1.0.3\\nquant.1.0.3.nupkg.sha512",
+    "C:\\Users\\Jeff\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'nQuant 1.0.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "nQuant",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}

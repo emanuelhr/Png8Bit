@@ -1,0 +1,313 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "gong-wpf-dragdrop/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "Microsoft.NETCore.Platforms/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Microsoft.Win32.SystemEvents/4.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "nQuant/1.0.3": {
+        "type": "package",
+        "compile": {
+          "Lib/net40/nQuant.Core.dll": {}
+        },
+        "runtime": {
+          "Lib/net40/nQuant.Core.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "Microsoft.Win32.SystemEvents": "4.7.0"
+        },
+        "compile": {
+          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "gong-wpf-dragdrop/2.2.0": {
+      "sha512": "jnqmZwExVmBq3bPxFfbc/zaiaqzX3URfuQMvR1E0+yNqyBBatpmk69ZprduOux4rFPOYZANbU1mAFVKzMt19Mg==",
+      "type": "package",
+      "path": "gong-wpf-dragdrop/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "GongSolutions.Wpf.DragDrop.png",
+        "LICENSE",
+        "gong-wpf-dragdrop.2.2.0.nupkg.sha512",
+        "gong-wpf-dragdrop.nuspec",
+        "lib/net45/GongSolutions.WPF.DragDrop.dll",
+        "lib/net45/GongSolutions.WPF.DragDrop.pdb",
+        "lib/net45/GongSolutions.WPF.DragDrop.xml",
+        "lib/net46/GongSolutions.WPF.DragDrop.dll",
+        "lib/net46/GongSolutions.WPF.DragDrop.pdb",
+        "lib/net46/GongSolutions.WPF.DragDrop.xml",
+        "lib/net47/GongSolutions.WPF.DragDrop.dll",
+        "lib/net47/GongSolutions.WPF.DragDrop.pdb",
+        "lib/net47/GongSolutions.WPF.DragDrop.xml",
+        "lib/netcoreapp3.0/GongSolutions.WPF.DragDrop.dll",
+        "lib/netcoreapp3.0/GongSolutions.WPF.DragDrop.pdb",
+        "lib/netcoreapp3.0/GongSolutions.WPF.DragDrop.xml",
+        "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.dll",
+        "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.pdb",
+        "lib/netcoreapp3.1/GongSolutions.WPF.DragDrop.xml"
+      ]
+    },
+    "Microsoft.NETCore.Platforms/3.1.0": {
+      "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
+      "type": "package",
+      "path": "microsoft.netcore.platforms/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.0/_._",
+        "microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+        "microsoft.netcore.platforms.nuspec",
+        "runtime.json",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Microsoft.Win32.SystemEvents/4.7.0": {
+      "sha512": "mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
+      "type": "package",
+      "path": "microsoft.win32.systemevents/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Win32.SystemEvents.dll",
+        "lib/net461/Microsoft.Win32.SystemEvents.xml",
+        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
+        "microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+        "microsoft.win32.systemevents.nuspec",
+        "ref/net461/Microsoft.Win32.SystemEvents.dll",
+        "ref/net461/Microsoft.Win32.SystemEvents.xml",
+        "ref/net472/Microsoft.Win32.SystemEvents.dll",
+        "ref/net472/Microsoft.Win32.SystemEvents.xml",
+        "ref/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
+        "ref/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "nQuant/1.0.3": {
+      "sha512": "mgDYaFlch7m7gEmY2DXl1cULUp4mKd1ysE1a7Vo6H3VM348OCj/y+8nR5LQIpvQoZnSBTVJuO/rwp/I6qkuL4Q==",
+      "type": "package",
+      "path": "nquant/1.0.3",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Lib/net20/nQuant.Core.dll",
+        "Lib/net20/nQuant.Core.pdb",
+        "Lib/net40/nQuant.Core.dll",
+        "Lib/net40/nQuant.Core.pdb",
+        "Tools/net20/nQuant.Core.dll",
+        "Tools/net20/nQuant.Core.pdb",
+        "Tools/net20/nQuant.exe",
+        "Tools/net20/nQuant.pdb",
+        "Tools/net40/nQuant.Core.dll",
+        "Tools/net40/nQuant.Core.pdb",
+        "Tools/net40/nQuant.exe",
+        "Tools/net40/nQuant.pdb",
+        "nquant.1.0.3.nupkg.sha512",
+        "nquant.nuspec"
+      ]
+    },
+    "System.Drawing.Common/4.7.0": {
+      "sha512": "v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
+      "type": "package",
+      "path": "system.drawing.common/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.xml",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "system.drawing.common.4.7.0.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "System.Drawing.Common >= 4.7.0",
+      "gong-wpf-dragdrop >= 2.2.0",
+      "nQuant >= 1.0.3"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Jeff\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Projekti C sharp\\Png8Bit\\Png8Bit\\Png8Bit.csproj",
+      "projectName": "Png8Bit",
+      "projectPath": "D:\\Projekti C sharp\\Png8Bit\\Png8Bit\\Png8Bit.csproj",
+      "packagesPath": "C:\\Users\\Jeff\\.nuget\\packages\\",
+      "outputPath": "D:\\Projekti C sharp\\Png8Bit\\Png8Bit\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Jeff\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "dependencies": {
+          "System.Drawing.Common": {
+            "target": "Package",
+            "version": "[4.7.0, )"
+          },
+          "gong-wpf-dragdrop": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "nQuant": {
+            "target": "Package",
+            "version": "[1.0.3, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'nQuant 1.0.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "nQuant",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}
