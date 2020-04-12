@@ -16,19 +16,18 @@ namespace Png8Bit
         {
             FileInfo fileInfo = new FileInfo(path);
             var newPath = new StringBuilder(path);
-            newPath.Remove(newPath.Length - 3, 3);
-            newPath.Append("png");
+           
+            newPath.Remove(newPath.Length - fileInfo.Extension.Length, fileInfo.Extension.Length);
+            newPath.Append(".png");
             var originalImage = new Bitmap(path);
-            if (originalImage.Size != new Size(400, 400) & originalImage.PixelFormat != PixelFormat.Format32bppArgb)
+            if (originalImage.Size != new Size(400, 400) || originalImage.PixelFormat != PixelFormat.Format32bppArgb)
             {
                 Bitmap newImage = await OriginalImageScale(originalImage, 400, 400);
                 if (newPath.ToString() == path)
                 {
-                    for (int tries = 0; IsFileLocked(fileInfo) && tries < 5; tries++)
-                    {
-                        Thread.Sleep(1000);
-                    }
-                    File.Delete(newPath.ToString());
+                    var lastIndex = newPath.ToString().LastIndexOf(@"\");
+                    var random = new Random();
+                    newPath.Insert(lastIndex+1, random.Next(0,6000).ToString());
                 }
 
              await   To8BitPng(newPath.ToString(), newImage);
@@ -39,14 +38,23 @@ namespace Png8Bit
 
         public static async Task To8BitPng(string path, Bitmap image)
         {
-            var quantizer = new WuQuantizer();
-            using (var quantized = quantizer.QuantizeImage(image))
+            try
             {
-                quantized.Save(path, ImageFormat.Png);
-                
-            }
+                var quantizer = new WuQuantizer();
+                using (var quantized = quantizer.QuantizeImage(image))
+                {
+                    quantized.Save(path, ImageFormat.Png);
 
-            await Task.CompletedTask;
+                }
+
+                await Task.CompletedTask;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         //returns original image scaled

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Png8Bit"
         ResizeMode="NoResize"
         mc:Ignorable="d"
-        Title="Png8Bit" Height="296" Width="701">
+        Title="Png8Bit" Height="329" Width="886">
     <Grid Margin="0,0,0,-6">
 
         <Grid.ColumnDefinitions>
@@ -17,12 +17,12 @@
         <CheckBox x:Name="chk_jpg" Content="jpg" IsChecked="True" HorizontalAlignment="Left" Margin="113,6,0,0" VerticalAlignment="Top" Height="15" Width="37" />
         <CheckBox x:Name="chk_png" Content="png" HorizontalAlignment="Left" Margin="155,6,0,0" VerticalAlignment="Top" Height="15" Width="41" />
         <CheckBox x:Name="chk_tif" Content="tif" HorizontalAlignment="Left" Margin="201,6,0,0" VerticalAlignment="Top" Height="15" Width="31" />
-        <Button x:Name="btn_convert" Content="Convert" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Width="222" Click="btn_convert_Click" Height="20" />
+        <Button x:Name="btn_convert" Content="Convert" HorizontalAlignment="Left" Margin="10,0,0,35" Width="222" Click="btn_convert_Click" Height="21" VerticalAlignment="Bottom" />
 
-        <TextBox x:Name="tbox_output" Margin="271,26,10,10" Text="" TextWrapping="Wrap" IsReadOnly="True" />
-        <Label x:Name="label1" Content="Output" HorizontalAlignment="Left" Margin="444,3,0,0" VerticalAlignment="Top" Width="52" Height="26"/>
-        <ListBox x:Name="list_drop" Margin="10,31,469,69"/>
-        <Label x:Name="label2" Content="Drop file or folder" HorizontalAlignment="Left" Margin="56,116,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="118" Height="26">
+        <TextBox x:Name="tbox_output" Margin="443,26,10,10" Text="" TextWrapping="Wrap" IsReadOnly="True" />
+        <Label x:Name="label1" Content="Output" HorizontalAlignment="Left" Margin="634,3,0,0" VerticalAlignment="Top" Width="52" Height="26"/>
+        <ListBox x:Name="list_drop" Margin="10,39,0,75" HorizontalAlignment="Left" Width="222"/>
+        <Label x:Name="label2" Content="Drop file or folder" HorizontalAlignment="Left" Margin="58,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="118" Height="26">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -32,8 +32,12 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="btn_delete" Background="Red" Content="-" HorizontalAlignment="Left" Margin="237,31,0,0" VerticalAlignment="Top" Height="19" Width="17"/>
-        <Label x:Name="converted" Content="" HorizontalAlignment="Left" Margin="538,3,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_delete" Background="Red" Content="-" HorizontalAlignment="Left" Margin="237,209,0,0" VerticalAlignment="Top" Height="20" Width="29"/>
+        <Label x:Name="converted" Content="" HorizontalAlignment="Left" Margin="710,3,0,0" VerticalAlignment="Top" Width="137"/>
+        <Label x:Name="lbl_manually" Content="Add aditional formats:" HorizontalAlignment="Left" Margin="294,6,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbox_Formats" Margin="365,70,0,70" HorizontalAlignment="Left" Width="64" RenderTransformOrigin="0.495,0.5"/>
+        <TextBox x:Name="tbox_additionalFormats" HorizontalAlignment="Left" Margin="368,39,0,0"   Text="Add.." TextWrapping="Wrap" VerticalAlignment="Top" Width="58"/>
+        <Button x:Name="btn_AddFormat" Background="Green" Content="+" HorizontalAlignment="Left" Margin="334,37,0,0" VerticalAlignment="Top" Width="24" Click="btn_AddFormat_Click"/>
 
     </Grid>
 </Window>

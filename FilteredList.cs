@@ -6,9 +6,9 @@ namespace Png8Bit
     public class FilteredList
     {
         private readonly string[] _allFiles;
-        private readonly List<Filters> _fitlers;
+        private readonly List<string> _fitlers;
 
-        public FilteredList(string[] allFiles, List<Filters> fitlers)
+        public FilteredList(string[] allFiles, List<string> fitlers)
         {
             _allFiles = allFiles;
             _fitlers = fitlers;
@@ -17,7 +17,7 @@ namespace Png8Bit
         public enum Filters
         {
             png,
-            jpg,
+            jpg,  
             tif
         }
 

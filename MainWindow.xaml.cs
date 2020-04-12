@@ -26,7 +26,24 @@ namespace Png8Bit
             list_drop.KeyDown += List_drop_KeyDown;
             btn_delete.Click += Btn_delete_Click;
             converted.Content = "";
+
+
+            tbox_additionalFormats.GotFocus += Tbox_additionalFormats_GotFocus;
+            tbox_additionalFormats.LostFocus += Tbox_additionalFormats_LostFocus;
            
+        }
+
+        private void Tbox_additionalFormats_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbox_additionalFormats.Text))
+            {
+                tbox_additionalFormats.Text = "Add..";
+            }
+        }
+
+        private void Tbox_additionalFormats_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbox_additionalFormats.Text = "";
         }
 
         private void Btn_delete_Click(object sender, RoutedEventArgs e)
@@ -63,10 +80,15 @@ namespace Png8Bit
             converted.Content = "";
             tbox_output.Clear();
             //Add filters
-            var filters = new List<Filters>();
-            if (chk_jpg.IsChecked == true) filters.Add(Filters.jpg);
-            if (chk_png.IsChecked == true) filters.Add(Filters.png);
-            if (chk_tif.IsChecked == true) filters.Add(Filters.tif);
+            var filters = new List<string>();
+            if (chk_jpg.IsChecked == true) filters.Add("jpg");
+            if (chk_png.IsChecked == true) filters.Add("png");
+            if (chk_tif.IsChecked == true) filters.Add("tif");
+
+            foreach (var item in lbox_Formats.Items)
+            {
+                filters.Add(item.ToString());
+            }
             //Loop trough each file/folder in drop list
             int count = 0;
             foreach (var file in list_drop.Items)
@@ -109,6 +131,11 @@ namespace Png8Bit
         private async void btn_convert_Click(object sender, RoutedEventArgs e)
         {
             await ConvertAsync();
+        }
+
+        private void btn_AddFormat_Click(object sender, RoutedEventArgs e)
+        {
+            lbox_Formats.Items.Add(tbox_additionalFormats.Text);
         }
     }
 }
