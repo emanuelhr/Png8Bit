@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Png8Bit
 {
@@ -20,7 +21,7 @@ namespace Png8Bit
             tif
         }
 
-        public List<string> FilterPaths()
+        public async Task<List<string>> FilterPaths()
         {
             List<string> filteredFiles = new List<string>();
             // string[] allFiles = Directory.GetFiles(path + "\\", "*.*", SearchOption.AllDirectories);
@@ -37,7 +38,8 @@ namespace Png8Bit
                     }
                 }
             }
-            return filteredFiles;
+            //return filteredFiles;
+            return await Task.FromResult(filteredFiles);
         }
     }
 }

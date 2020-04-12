@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using static Png8Bit.FilteredList;
 
@@ -14,11 +16,35 @@ namespace Png8Bit
         {
             InitializeComponent();
             list_drop.AllowDrop = true;
-           
+            label2.AllowDrop = true;
 
-
+            label2.Drop += listBoxFiles_DragEnter;
+            label2.Drop += List_drop_Drop;
             list_drop.Drop += listBoxFiles_DragEnter;
+
+            list_drop.Drop += List_drop_Drop;
+            list_drop.KeyDown += List_drop_KeyDown;
+            btn_delete.Click += Btn_delete_Click;
+            converted.Content = "";
            
+        }
+
+        private void Btn_delete_Click(object sender, RoutedEventArgs e)
+        {
+            list_drop.Items.Remove(list_drop.SelectedItem);
+        }
+
+        private void List_drop_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Delete)
+            {
+                list_drop.Items.Remove(list_drop.SelectedItem);
+            }
+        }
+
+        private void List_drop_Drop(object sender, DragEventArgs e)
+        {
+            label2.Content = "";
         }
 
         private void listBoxFiles_DragEnter(object sender, DragEventArgs e)
@@ -27,13 +53,14 @@ namespace Png8Bit
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             foreach (string file in files)
             {
-                list_drop.Items.Add(file);
-                
+                list_drop.Items.Add(file);                
             }
         }
 
-        private void btn_convert_Click(object sender, RoutedEventArgs e)
+
+        private async Task ConvertAsync()
         {
+            converted.Content = "";
             tbox_output.Clear();
             //Add filters
             var filters = new List<Filters>();
@@ -41,6 +68,7 @@ namespace Png8Bit
             if (chk_png.IsChecked == true) filters.Add(Filters.png);
             if (chk_tif.IsChecked == true) filters.Add(Filters.tif);
             //Loop trough each file/folder in drop list
+            int count = 0;
             foreach (var file in list_drop.Items)
             {
                 //if it is a directory use directory convert
@@ -49,28 +77,38 @@ namespace Png8Bit
                     string[] allFiles = Directory.GetFiles((string)file + "\\", "*.*", SearchOption.AllDirectories);
                     var filteredList = new FilteredList(allFiles, filters);
 
-                    foreach (var item in filteredList.FilterPaths())
+                    foreach (var item in await filteredList.FilterPaths())
                     {
-                        if (PictureManipulation.ConvertPicture(item))
+                        if (await PictureManipulation.ConvertPicture(item))
                         {
-                            tbox_output.Text += "Converted" + item + "\n";
+                            tbox_output.Text += "Converted: " + item + "\n";
+                            count++;
                         }
                     }
                 }
                 //if it is a file use file convert
                 if (File.Exists((string)file))
                 {
-                    if (PictureManipulation.ConvertPicture((string)file))
+                    if (await PictureManipulation.ConvertPicture((string)file))
                     {
-                        tbox_output.Text += "Converted" + file + "\n";
+                        tbox_output.Text += "Converted: " + file + "\n";
+                        count++;
                     }
                 }
 
-                if (tbox_output.Text.Length==0)
+                if (tbox_output.Text.Length == 0)
                 {
                     tbox_output.Text += "No files were converted";
-               }
+                }
             }
+            converted.Content += "Converted : " + count + " Pictures";
+
+        }
+
+
+        private async void btn_convert_Click(object sender, RoutedEventArgs e)
+        {
+            await ConvertAsync();
         }
     }
 }

@@ -19,9 +19,21 @@
         <CheckBox x:Name="chk_tif" Content="tif" HorizontalAlignment="Left" Margin="201,6,0,0" VerticalAlignment="Top" Height="15" Width="31" />
         <Button x:Name="btn_convert" Content="Convert" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Width="222" Click="btn_convert_Click" Height="20" />
 
-        <TextBox x:Name="tbox_output" Margin="249,26,10,10" Text="" TextWrapping="Wrap" IsReadOnly="True" />
+        <TextBox x:Name="tbox_output" Margin="271,26,10,10" Text="" TextWrapping="Wrap" IsReadOnly="True" />
         <Label x:Name="label1" Content="Output" HorizontalAlignment="Left" Margin="444,3,0,0" VerticalAlignment="Top" Width="52" Height="26"/>
         <ListBox x:Name="list_drop" Margin="10,31,469,69"/>
+        <Label x:Name="label2" Content="Drop file or folder" HorizontalAlignment="Left" Margin="56,116,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="118" Height="26">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="btn_delete" Background="Red" Content="-" HorizontalAlignment="Left" Margin="237,31,0,0" VerticalAlignment="Top" Height="19" Width="17"/>
+        <Label x:Name="converted" Content="" HorizontalAlignment="Left" Margin="538,3,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

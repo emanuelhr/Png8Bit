@@ -6,12 +6,13 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Png8Bit
 {
     public static class PictureManipulation
     {
-        public static bool ConvertPicture(string path)
+        public static async Task<bool> ConvertPicture(string path)
         {
             FileInfo fileInfo = new FileInfo(path);
             var newPath = new StringBuilder(path);
@@ -20,7 +21,7 @@ namespace Png8Bit
             var originalImage = new Bitmap(path);
             if (originalImage.Size != new Size(400, 400) & originalImage.PixelFormat != PixelFormat.Format32bppArgb)
             {
-                Bitmap newImage = OriginalImageScale(originalImage, 400, 400);
+                Bitmap newImage = await OriginalImageScale(originalImage, 400, 400);
                 if (newPath.ToString() == path)
                 {
                     for (int tries = 0; IsFileLocked(fileInfo) && tries < 5; tries++)
@@ -30,23 +31,26 @@ namespace Png8Bit
                     File.Delete(newPath.ToString());
                 }
 
-                To8BitPng(newPath.ToString(), newImage);
-                return true;
+             await   To8BitPng(newPath.ToString(), newImage);
+                return await Task.FromResult(true);
             }
-            return false;
+            return await Task.FromResult(false);
         }
 
-        public static void To8BitPng(string path, Bitmap image)
+        public static async Task To8BitPng(string path, Bitmap image)
         {
             var quantizer = new WuQuantizer();
             using (var quantized = quantizer.QuantizeImage(image))
             {
                 quantized.Save(path, ImageFormat.Png);
+                
             }
+
+            await Task.CompletedTask;
         }
 
         //returns original image scaled
-        public static Bitmap OriginalImageScale(Bitmap image, float width, float height)
+        public static async Task<Bitmap> OriginalImageScale(Bitmap image, float width, float height)
         {
             float scale = Math.Min(width / image.Width, height / image.Height);
             var brush = new SolidBrush(Color.White);
@@ -61,7 +65,7 @@ namespace Png8Bit
                 graph.FillRectangle(brush, new RectangleF(0, 0, width, height));
                 graph.DrawImage(image, ((int)width - scaleWidth) / 2, ((int)height - scaleHeight) / 2, scaleWidth, scaleHeight);
             }
-            return bmp;
+            return await Task.FromResult(bmp);
         }
 
         public static bool IsFileLocked(FileInfo file)
