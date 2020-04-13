@@ -16,7 +16,6 @@ D:\Projekti C sharp\Png8Bit\Png8Bit\obj\Debug\netcoreapp3.1\Png8Bit.AssemblyInfo
 D:\Projekti C sharp\Png8Bit\Png8Bit\obj\Debug\netcoreapp3.1\Png8Bit.dll
 D:\Projekti C sharp\Png8Bit\Png8Bit\obj\Debug\netcoreapp3.1\Png8Bit.pdb
 D:\Projekti C sharp\Png8Bit\Png8Bit\obj\Debug\netcoreapp3.1\Png8Bit.genruntimeconfig.cache
-D:\Projekti C sharp\Png8Bit\Png8Bit\obj\Debug\netcoreapp3.1\Png8Bit.csprojAssemblyReference.cache
 D:\Projekti C sharp\Png8Bit\Png8Bit\bin\Debug\netcoreapp3.1\GongSolutions.WPF.DragDrop.dll
 D:\Projekti C sharp\Png8Bit\Png8Bit\obj\Debug\netcoreapp3.1\Png8Bit.csproj.CopyComplete
 D:\Projekti C sharp\Png8Bit\Png8Bit\bin\Debug\netcoreapp3.1\nQuant.Core.dll

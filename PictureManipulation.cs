@@ -10,6 +10,16 @@ using System.Threading.Tasks;
 
 namespace Png8Bit
 {
+
+    public class Person
+    {
+
+        public DateTime DateOfBirth { get; set; }
+        public int Age { get { return DateTime.Now.Year - DateOfBirth.Year; } }
+
+    }
+
+
     public static class PictureManipulation
     {
         public static async Task<bool> ConvertPicture(string path)
