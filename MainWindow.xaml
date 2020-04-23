@@ -22,7 +22,7 @@
         <TextBox x:Name="tbox_output" Margin="443,26,10,10" Text="" TextWrapping="Wrap" IsReadOnly="True" />
         <Label x:Name="label1" Content="Output" HorizontalAlignment="Left" Margin="634,3,0,0" VerticalAlignment="Top" Width="52" Height="26"/>
         <ListBox x:Name="list_drop" Margin="10,39,0,75" HorizontalAlignment="Left" Width="222"/>
-        <Label x:Name="label2" Content="Drop file or folder" HorizontalAlignment="Left" Margin="58,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="118" Height="26">
+        <Label x:Name="label2"   Content="Drop file or folder" HorizontalAlignment="Left" Margin="58,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="118" Height="26">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

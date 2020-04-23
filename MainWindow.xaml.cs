@@ -33,6 +33,9 @@ namespace Png8Bit
            
         }
 
+        #region Event Handlers
+
+        #endregion
         private void Tbox_additionalFormats_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(tbox_additionalFormats.Text))
@@ -61,7 +64,8 @@ namespace Png8Bit
 
         private void List_drop_Drop(object sender, DragEventArgs e)
         {
-            label2.Content = "";
+           
+            label2.Visibility = Visibility.Hidden;
         }
 
         private void listBoxFiles_DragEnter(object sender, DragEventArgs e)
@@ -136,6 +140,11 @@ namespace Png8Bit
         private void btn_AddFormat_Click(object sender, RoutedEventArgs e)
         {
             lbox_Formats.Items.Add(tbox_additionalFormats.Text);
+        }
+
+        private void label2_Drop(object sender, DragEventArgs e)
+        {
+
         }
     }
 }
